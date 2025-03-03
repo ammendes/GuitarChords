@@ -1,18 +1,19 @@
 import random
 import tkinter as tk
 from tkinter import ttk
+from chords import root_options, type_options, form_options
 
 class RandomChordGenerator:
     def __init__(self, master):
         # Initialize the main application window
-        self.master = master
-        master.title("Random Chord Generator")
-        master.geometry("300x150")  # Adjusted size for simpler layout
+        self.master = master  # Reference to the main window
+        master.title("Random Chord Generator")  # Set the window title
+        master.geometry("600x300")  # Set the window size
 
-        # Predefined lists of possible values
-        self.root_options = ["Ab", "A", "A#", "Bb", "B", "Cb", "C", "C#", "Db", "D", "D#", "Eb", "E", "Fb", "F", "F#", "Gb", "G", "G#"]
-        self.type_options = ["Major", "Minor", "7", "Min7", "Maj7", "5"]
-        self.form_options = ["C", "A", "G", "E", "D"]
+        # Import predefined lists of root notes, chord types, and chord forms
+        self.root_options = root_options
+        self.type_options = type_options
+        self.form_options = form_options
 
         # Create and place the "Generate Chord" button
         ttk.Button(master, text="Generate Chord", command=self.generate_chord).pack(pady=20)
